@@ -1,26 +1,21 @@
 import torch
 import torch.nn as nn
-import models.feature_extraction_resnet50 as n
-import models.normal_Resnet50 as fe
+import resnet50_model as net
 
 #Congela o calculo de gradiente das outras camadas
-def __freeze_trained_layers(model):
+def __freeze_otrained_layers(model):
     for params in model.parameters():
         params.requires_grad = False
     return model
 
-def create(n_classes: int, pre_trained: bool, train_just_fc: bool, is_fe: bool):
+def create(n_classes: int, pre_trained: bool, train_just_fc: bool):
     #Configurando
 
-    #Verificando o tipo de rede
-    if is_fe:
-        model = fe.resnet50(pre_trained)
-    else:
-        model = n.resnet50(pre_trained)
+    model = net.resnet50(pre_trained)
 
     #Verificando se sera necessário treinar as outras camadas
     if train_just_fc:
-        model = __freeze_trained_layers(model)
+        model = __freeze_otrained_layers(model)
 
     #Criando a nova fully connected
     model.fc = nn.Linear(2048, n_classes)
@@ -31,3 +26,5 @@ def create(n_classes: int, pre_trained: bool, train_just_fc: bool, is_fe: bool):
         model = model.cuda()
     else:
         print("CUDA indisponível. Modelo otimizado para uso de CPU")
+
+    return model

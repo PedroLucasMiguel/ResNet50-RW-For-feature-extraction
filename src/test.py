@@ -3,9 +3,9 @@ import torch.nn as nn
 import torchvision.transforms as transforms
 import PIL
 from PIL import Image
-from rs50_models import fine_tunned_model as ftm
+import rs50_models.fine_tunned_model as ftm
 
-model = ftm.create(2, False, True, True)
+model = ftm.create(2, False, True)
 model.load_state_dict(torch.load('checkpoints/best_model_41_f1=0.9018.pt'))
 
 transform = transforms.Compose([
@@ -23,7 +23,7 @@ image = image.cuda()
 
 model.eval()
 out = model(image)
-print(out[4])
+print(out[0])
 
 
 
