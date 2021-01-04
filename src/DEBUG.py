@@ -48,7 +48,21 @@ if out[0][0] > out[0][1]:
 else:
     max_pooling2d_1_f.append(test["test"], 1)
 
-    max_pooling2d_1_f.close()
+image = PIL.Image.open('Covid (185).png')
+image = transform(image)
+image = image.unsqueeze(0)
+image = image.cuda()
+
+model.eval()
+out = model(image)
+print(test["test"])
+
+if out[0][0] > out[0][1]:
+    max_pooling2d_1_f.append(test["test"], 0)
+else:
+    max_pooling2d_1_f.append(test["test"], 1)
+
+max_pooling2d_1_f.close()
 
 
 

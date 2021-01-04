@@ -18,8 +18,6 @@ class Arfflib(object):
     def append(self, array: list, output):
         for i in range(len(array)):
             self.f.write(str(array[i])+",")
-            if(i % 20 == 0):
-                self.f.write("\n")
         self.f.write(str(output)+"\n")
 
     def close(self):
