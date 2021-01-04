@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
-import normal_resnet50 as n
-import feature_extraction_resnet50 as fe
+import models.feature_extraction_resnet50 as n
+import models.normal_Resnet50 as fe
 
 #Congela o calculo de gradiente das outras camadas
 def __freeze_trained_layers(model):
