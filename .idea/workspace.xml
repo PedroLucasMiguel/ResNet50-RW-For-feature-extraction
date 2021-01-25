@@ -20,7 +20,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ResNet50-RW-For-feature-extractionBKP" />
   </component>
   <component name="RunManager">
     <configuration name="DEBUG" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -61,6 +61,7 @@
       <updated>1610228960613</updated>
       <workItem from="1610228978726" duration="647000" />
       <workItem from="1610233404192" duration="332000" />
+      <workItem from="1611605017459" duration="45000" />
     </task>
     <servers />
   </component>

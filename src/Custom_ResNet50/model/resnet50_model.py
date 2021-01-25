@@ -256,17 +256,13 @@ def _resnet(
 ) -> ResNet:
     model = ResNet(block, layers, **kwargs)
     if pretrained:
-        model.load_state_dict(torch.load('rs50_models/weights/resnet50_imagenet.pth'))
+        model.load_state_dict(torch.load('src/Custom_ResNet50/weights/resnet50_imagenet.pth'))
     return model
 
 
 def resnet50(pretrained: bool = False, progress: bool = True, **kwargs: Any) -> ResNet:
     r"""ResNet-50 model from
     `"Deep Residual Learning for Image Recognition" <https://arxiv.org/pdf/1512.03385.pdf>`_
-
-    Args:
-        pretrained (bool): If True, returns a model pre-trained on ImageNet
-        progress (bool): If True, displays a progress bar of the download to stderr
     """
     # Vetor [3,4,6,3] = quantidade de blocos residuais por estágio
     return _resnet(Bottleneck, [3, 4, 6, 3], pretrained, **kwargs)

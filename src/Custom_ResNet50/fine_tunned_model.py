@@ -7,7 +7,7 @@ import resnet50_model as net
 
 
 # Congela o calculo de gradiente das outras camadas
-def __freeze_otrained_layers(model):
+def __freeze_trained_layers(model):
     for params in model.parameters():
         params.requires_grad = False
     return model
@@ -18,16 +18,16 @@ def create(n_classes: int, pre_trained: bool, train_just_fc: bool):
 
     # Verifica se será necessário cogelar os calculos de gradientes
     if train_just_fc:
-        model = __freeze_otrained_layers(model)
+        model = __freeze_trained_layers(model)
 
     # Criando a nova fully connected
     model.fc = nn.Linear(2048, n_classes)
 
     # Verificando disponibilidade CUDA
     if torch.cuda.is_available():
-        print("CUDA disponivel. Modelo otimizado para uso de GPU")
         model = model.cuda()
+        print("CUDA available. Model optimized to use GPU")
     else:
-        print("CUDA indisponível. Modelo otimizado para uso de CPU")
+        print("CUDA unavailable. Model optimized to use CPU")
 
     return model
