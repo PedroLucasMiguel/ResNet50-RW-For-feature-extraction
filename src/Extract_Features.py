@@ -85,31 +85,18 @@ transform = transforms.Compose([
 ])
 train_data = datasets.ImageFolder('DataSet', transform=transform)
 
-# Criar o test loader
-# Realizando o split do dataset
-num_train = len(train_data)
-indices = list(range(num_train))
-np.random.shuffle(indices)
-split = int(np.floor(0.2 * num_train))
-train_idx, valid_idx = indices[split:], indices[:split]
-train_sampler = SubsetRandomSampler(train_idx)
-val_sampler = SubsetRandomSampler(valid_idx)
-
-train_loader = torch.utils.data.DataLoader(train_data, batch_size=hp.BATCH_SIZE, sampler=train_sampler,
-                                           num_workers=0)
-val_loader = torch.utils.data.DataLoader(train_data, batch_size=hp.BATCH_SIZE, sampler=val_sampler,
-                                          num_workers=0)
+train_loader = torch.utils.data.DataLoader(train_data, batch_size=hp.BATCH_SIZE, num_workers=0)
 
 output_value = None
 model.eval()
 print("Starting extraction...")
-for batch_idx, (data, target) in enumerate(val_loader):
+for batch_idx, (data, target) in enumerate(train_loader):
     # Se CUDA estiver disponivel, move os tensors para a GPU
     if torch.cuda.is_available():
         data, target = data.cuda(), target.cuda()
     # Foward pass
     output = model(data)
-    if output[0][0] > output[0][1]:
+    if target[0] == 0:
         output_value = 0
     else:
         output_value = 1
