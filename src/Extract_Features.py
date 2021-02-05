@@ -83,8 +83,8 @@ transform = transforms.Compose([
     transforms.Grayscale(num_output_channels=3),
     transforms.ToTensor()
 ])
-train_data = datasets.ImageFolder('DataSet', transform=transform)
 
+train_data = datasets.ImageFolder('DataSet', transform=transform)
 train_loader = torch.utils.data.DataLoader(train_data, batch_size=hp.BATCH_SIZE, num_workers=0)
 
 output_value = None

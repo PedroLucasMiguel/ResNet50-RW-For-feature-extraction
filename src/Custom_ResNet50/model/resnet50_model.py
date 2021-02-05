@@ -256,7 +256,7 @@ def _resnet(
 ) -> ResNet:
     model = ResNet(block, layers, **kwargs)
     if pretrained:
-        model.load_state_dict(torch.load('src/Custom_ResNet50/weights/resnet50_imagenet.pth'))
+        model.load_state_dict(torch.load('resnet50_imagenet.pth'))
     return model
 
 
