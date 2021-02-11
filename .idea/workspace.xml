@@ -20,7 +20,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/New folder" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -28,7 +28,7 @@
       <recent name="C:\GitHub\ResNet50-RW-For-feature-extraction\src\Custom_ResNet50\model" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.training_with_ignite">
+  <component name="RunManager" selected="Python.Extract_Features">
     <configuration name="DEBUG" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ResNet50-RW-For-feature-extraction" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -97,8 +97,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.training_with_ignite" />
         <item itemvalue="Python.Extract_Features" />
+        <item itemvalue="Python.training_with_ignite" />
         <item itemvalue="Python.DEBUG" />
       </list>
     </recent_temporary>
@@ -122,6 +122,12 @@
       <workItem from="1612280005427" duration="627000" />
       <workItem from="1612450490169" duration="808000" />
       <workItem from="1612551579005" duration="3079000" />
+      <workItem from="1612620843494" duration="4492000" />
+      <workItem from="1612701944836" duration="53000" />
+      <workItem from="1612784079576" duration="2071000" />
+      <workItem from="1612876086154" duration="55000" />
+      <workItem from="1612890185159" duration="3430000" />
+      <workItem from="1612905212418" duration="185000" />
     </task>
     <servers />
   </component>
@@ -129,8 +135,8 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ResNet50_RW_For_feature_extraction$Extract_Features.coverage" NAME="Extract_Features Coverage Results" MODIFIED="1612280282230" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/ResNet50_RW_For_feature_extraction$training_with_ignite.coverage" NAME="training_with_ignite Coverage Results" MODIFIED="1612554091386" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/ResNet50_RW_For_feature_extraction$DEBUG.coverage" NAME="DEBUG Coverage Results" MODIFIED="1610233710635" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/ResNet50_RW_For_feature_extraction$Extract_Features.coverage" NAME="Extract_Features Coverage Results" MODIFIED="1612896132658" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/ResNet50_RW_For_feature_extraction$training_with_ignite.coverage" NAME="training_with_ignite Coverage Results" MODIFIED="1612896112156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/ResNet50_RW_For_feature_extraction$DEBUG.coverage" NAME="DEBUG Coverage Results" MODIFIED="1612784628889" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>

@@ -12,10 +12,10 @@ import hyper_parameters as hp
 
 ##########################################################################################
 # Objetos dos ARFF files
-arff_max_pooling2d_1 = arff("max_pooling2d_1", 193600)
-arff_activation_4_relu = arff("activation_4_relu", 774400)
+#arff_max_pooling2d_1 = arff("max_pooling2d_1", 193600)
+#arff_activation_4_relu = arff("activation_4_relu", 774400)
 arff_activation_48_relu = arff("activation_48_relu", 25088)
-arff_activation_49_relu = arff("activation_49_relu", 100352)
+#arff_activation_49_relu = arff("activation_49_relu", 100352)
 arff_avg_pool = arff("avg_pool", 2048)
 
 # Arrays temporarios
@@ -68,13 +68,13 @@ def get_features(name):
 
 # Criando o modelo e carregando os pesos
 model = ftm.create(2, False, False)
-model.load_state_dict(torch.load('checkpoints/best_model_41_f1=0.9018.pt'))
+model.load_state_dict(torch.load('model_chekpoint/best_model_24_f1=0.8872.pt'))
 
 # Registrando o método de forward hook
-model.maxpool.register_forward_hook(get_features('max_pooling2d_1'))
-model.layer1[0].relu.register_forward_hook(get_features('activation_4_relu'))
+#model.maxpool.register_forward_hook(get_features('max_pooling2d_1'))
+#model.layer1[0].relu.register_forward_hook(get_features('activation_4_relu'))
 model.layer4[2].bn2.register_forward_hook(get_features('activation_48_relu'))
-model.layer4[2].relu.register_forward_hook(get_features('activation_49_relu'))
+#model.layer4[2].relu.register_forward_hook(get_features('activation_49_relu'))
 model.avgpool.register_forward_hook(get_features('avg_pool'))
 
 # Criando o dataset
@@ -82,6 +82,7 @@ transform = transforms.Compose([
     transforms.Resize((224, 224)),
     transforms.Grayscale(num_output_channels=3),
     transforms.ToTensor()
+    #transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
 ])
 
 train_data = datasets.ImageFolder('DataSet', transform=transform)
@@ -101,10 +102,10 @@ for batch_idx, (data, target) in enumerate(train_loader):
     else:
         output_value = 1
 
-    arff_max_pooling2d_1.append(hook_result["max_pooling2d_1"], output_value)
-    arff_activation_4_relu.append(hook_result["activation_4_relu"], output_value)
+    #arff_max_pooling2d_1.append(hook_result["max_pooling2d_1"], output_value)
+    #arff_activation_4_relu.append(hook_result["activation_4_relu"], output_value)
     arff_activation_48_relu.append(hook_result["activation_48_relu"], output_value)
-    arff_activation_49_relu.append(hook_result["activation_49_relu"], output_value)
+    #arff_activation_49_relu.append(hook_result["activation_49_relu"], output_value)
     arff_avg_pool.append(hook_result["avg_pool"], output_value)
 
 print("Extraction completed")
